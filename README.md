@@ -86,7 +86,3 @@ Ensure you have the following installed:
 - **Custom themes**
 - **Advanced security features**
 
-## License
-
-MIT License
-
