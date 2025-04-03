@@ -1,97 +1,92 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# React Native VPN App
 
-# Getting Started
+## Project Overview
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+This is a **React Native VPN App** that allows users to:
 
-## Step 1: Start Metro
+- **Authenticate** using Firebase
+- **Connect to a VPN server** with auto-reconnect
+- **Select the best VPN server** based on latency
+- **Receive push notifications** for VPN status
+- **Support multiple languages** with localization
+- **Enable dark mode** (if needed)
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## Installation
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+### Prerequisites
 
-```sh
-# Using npm
-npm start
+Ensure you have the following installed:
 
-# OR using Yarn
-yarn start
-```
+- Node.js
+- npm or yarn
+- Expo CLI (`npm install -g expo-cli`)
 
-## Step 2: Build and run your app
+### Steps
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+1. Clone the repository:
 
-### Android
+   ```sh
+   git clone https://github.com/your-repo/react-native-vpn.git
+   cd react-native-vpn
+   ```
 
-```sh
-# Using npm
-npm run android
+2. Install dependencies:
 
-# OR using Yarn
-yarn android
-```
+   ```sh
+   npm install
+   ```
 
-### iOS
+3. Configure Firebase:
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+   - Create a Firebase project.
+   - Enable Authentication.
+   - Replace `firebaseConfig` in `firebase.js` with your credentials.
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+4. Run the project:
 
-```sh
-bundle install
-```
+   ```sh
+   npm start
+   ```
 
-Then, and every time you update your native dependencies, run:
+## Features
 
-```sh
-bundle exec pod install
-```
+### 1. Authentication (Firebase)
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+- Users can **sign up and log in** using Firebase Authentication.
+- Implemented in `LoginScreen.js` and `RegisterScreen.js`.
 
-```sh
-# Using npm
-npm run ios
+### 2. VPN Connection
 
-# OR using Yarn
-yarn ios
-```
+- Users can connect to a VPN server.
+- Auto-reconnect if the connection drops.
+- Implemented in `VpnScreen.js`.
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+### 3. Server Selection Based on Latency
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+- The app selects the best VPN server automatically.
+- Implemented in `VpnScreen.js`.
 
-## Step 3: Modify your app
+### 4. Push Notifications
 
-Now that you have successfully run the app, let's make changes!
+- Users get notified when they connect/disconnect from VPN.
+- Implemented using `react-native-push-notification`.
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+### 5. Multi-language Support
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+- Supported languages: **English, German, Hindi**.
+- Implemented using `react-native-localize`.
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+### 6. Dark Mode
 
-## Congratulations! :tada:
+- Can be enabled using React Native Appearance API.
 
-You've successfully run and modified your React Native App. :partying_face:
+## Future Improvements
 
-### Now what?
+- **More server locations**
+- **Custom themes**
+- **Advanced security features**
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+## License
 
-# Troubleshooting
+MIT License
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
